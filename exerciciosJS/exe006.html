@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <link rel="shortcut icon" href="midia/Aniket-Suvarna-Box-Logo-Bxl-javascript.48.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body {
+            font-family: "Exo 2", sans-serif;
+            background-color: #ccc;
+        }
+        fieldset {
+            width: 50px;
+            margin: auto;
+            background-color: white;
+        }
+
+        button {
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+            background-color: white;
+        }
+        #container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-90%);
+        }
+        input {
+            box-sizing: border-box;
+            height: 15px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #091727;
+            box-shadow: 0px 2px 5px rgba(5, 40, 78, 0.74);
+        }
+        
+        #res{
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 70%);
+            font-family: "Kanit", sans-serif;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Calculando média</h1>
+        <form>
+            <fieldset>
+                Digite o nome do aluno: <br> <input type="text" id="nome"> <br>
+                Digite a primeira nota: <br> <input type="number" id="n1"><br>
+                Digite a segunda nota: <br> <input type="number" id="n2"> <br>
+            </fieldset>
+        </form>
+        <button type="button" onclick="calc()">Calcular</button>
+    </div>
+    <div id="res">Resultado</div>
+
+    <script>
+        function calc() {
+            var nomeAluno = document.getElementById("nome").value;
+            var nota1 = parseFloat(document.getElementById("n1").value);
+            var nota2 = parseFloat(document.getElementById("n2").value);
+            var res = document.getElementById("res");
+            if(nota1<0 || nota1>10 || nota2>10 || nota2<0){
+                res.innerHTML=`Digite apenas notas de 0 a 10.`
+            }else{       
+            var media = (nota1 + nota2) / 2;
+            if (media < 4) {
+                res.innerHTML = `O aluno ${nomeAluno} <br> com as notas ${nota1} e ${nota2}  <br> foi rerovado com média igual a ${media} `
+            } else if (media >= 4 && media <= 5) {
+                res.innerHTML = `O aluno ${nomeAluno} <br> com as notas ${nota1} e ${nota2} <br> ficou de recuperação com média igual a ${media}`
+            } else {
+                res.innerHTML = `O aluno ${nomeAluno} <br> com as notas ${nota1} e ${nota2} <br> foi aprovado com média igual a ${media}`
+            }
+        }
+        }
+    </script>
+</body>
+
+</html>

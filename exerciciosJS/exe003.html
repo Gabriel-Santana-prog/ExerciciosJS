@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador vogais</title>
+    <link rel="shortcut icon" href="midia/Aniket-Suvarna-Box-Logo-Bxl-javascript.48.png">
+    <style>
+        body{
+            background-color: darkseagreen;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #container{
+            display: flex;
+        }
+        #conteudo{
+            margin: auto;
+        }
+        h1{
+            text-align: center;
+        }
+        button{
+            margin-left: 30%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            background-color:white;
+        }
+        #res{
+            margin-left: 17%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de vogais</h1>
+    <div id="container">
+        <div id="conteudo">
+            <label for="word">Digite uma palavra qualquer:</label>
+            <input type="text" id="word"> <br>
+            <button type="button" onclick="calc()">Verificar</button>
+            <div id="res"></div>
+        </div>
+    </div>
+    <script>
+        function calc(){
+         var palavra=document.getElementById("word").value;
+         var res=document.getElementById("res");
+         var vogais=['a','e','i','o','u'];
+         var contVogais=0;
+         var tamanho= palavra.length;
+         if(palavra.length==0){
+            res.innerHTML="Digite alguma palavra!";
+         }else if(isFinite(palavra)){
+               res.innerHTML="Digite apenas palvras!"
+         }else{
+         for(let i=0;i<tamanho;i++){
+            if (vogais.includes(palavra[i].toLowerCase())){
+                 contVogais++;
+            }
+         }
+         res.innerHTML=` A palavra "${palavra}" tem  ${contVogais} vogais`; 
+        }
+         
+        }
+    </script>
+</body>
+</html>

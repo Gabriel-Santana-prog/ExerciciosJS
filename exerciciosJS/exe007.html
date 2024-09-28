@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="midia/Aniket-Suvarna-Box-Logo-Bxl-javascript.48.png">
+    <title>Contagem</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        body{
+            font-family: "Comfortaa", sans-serif;
+            background-color: cornsilk;
+        }
+        #conteudo{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%,-150%);
+        }
+        h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #nums{
+           position: absolute;
+           top: 35%;
+           left: 30%;
+           transform: (-50%,-50%);
+        }
+        #res{
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            transform: (-80%,-10%,);
+        }
+        button{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contando de 0 até um número positivo qualquer</h1>
+    <div id="conteudo">
+        <p>
+            Escolha o limite final para contagem a partir do (0 digite apenas números positivos)
+        </p>
+        <p>
+            Valor final: <input type="number" name="numero" id="num"> <button type="button" onclick="calc()">Contar</button>
+            <button type="button" onclick="clean()">Limpar</button>
+            <br>
+        </p>
+        <p>
+            Preencha os dados acima e aperte o botão.
+        </p>
+    </div>
+    <div id="res" class="resposta"></div> 
+    <div id="nums" class="resposta"></div>
+
+    
+    <script>
+        function calc(){
+            var n=parseInt(document.getElementById("num").value);
+            var res=document.getElementById("res");
+            var nums=document.getElementById("nums");
+            if(n<=0){
+                res.innerHTML=`Digite apenas números positivos ou maior que 0!`;
+            }else{
+            res.textContent=`Contando de 0 até ${n}`
+            let numerosPorlinha=5;
+            for(let i=0;i<=n;i++){
+                nums.innerHTML+=`${i} ➡️`;
+                if(i%numerosPorlinha==numerosPorlinha-1){
+                    nums.innerHTML+="<br>";
+                }
+            }
+        }
+            nums.innerHTML+=`🏁`;
+            }
+            function clean(){
+                res.innerHTML=``;
+                nums.innerHTML=``;
+            }
+           
+        
+    </script>
+</body>
+</html>

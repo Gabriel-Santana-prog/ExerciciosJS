@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="shortcut icon" href="midia/Aniket-Suvarna-Box-Logo-Bxl-javascript.48.png">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: cadetblue;
+            color: white;
+        }
+        #container{
+            display: flex;
+        }
+        #conteudo{
+            margin: auto;
+        }
+        #res{
+            position:relative;top:0;padding:4px;
+            margin: auto;
+            margin-top: 10px;
+            margin-left: 30%;
+            border: 2px solid black;
+            border-radius: 3px;
+            padding: 2px;
+            padding-left: 10px;
+            padding-right: -17px;
+            width: 130px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: black;
+        }
+        #res:hover{
+            top:-4px;box-shadow:0 4px 3px white
+        }
+        h1{
+            text-align: center;
+        }
+        input{
+            width: 30px;
+        }
+        button{
+            background-color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <div id="container">
+        <div id="conteudo">
+            <label for="num">Digite um número para saber sua tabuada:</label>
+            <input type="number" id="num">
+            <button type="button" onclick="calc()">Ver</button> 
+            <div id="res">Calculando...</div>
+        </div>
+    </div>
+    
+
+    <script>
+        function calc(){
+            var n=parseInt(document.getElementById("num").value);
+            var res=document.getElementById("res");
+            if(isNaN(n)){
+                res.innerHTML="Por favor digite um número"
+            }else{
+            res.innerHTML="";
+            for(let i=1;i<=10;i++){
+                let multiplicacao=n*i;
+                res.innerHTML+=`${n} x ${i} = ${multiplicacao} <br>`
+            }
+          }
+        }
+    
+    </script>
+</body>
+</html>

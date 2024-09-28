@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="midia/Aniket-Suvarna-Box-Logo-Bxl-javascript.48.png">
+    <title>Número primo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+        
+        body {
+            font-family: "Source Code Pro", monospace;
+            ;
+            background-color: rgb(49, 192, 49);
+        }
+
+        #conteudo {
+            background-color: white;
+            position: absolute;
+            border: 2px solid black;
+            padding: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -90%);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        #res {
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 180%);
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-left: 28%;
+        }
+
+        #num {
+            width: 50px;
+            height: 15px;
+            margin-left: 30%;
+        }
+        #textPrimo{
+            text-align: justify;
+            color: white;
+            font-style: italic;
+            font-size:larger ;
+            
+        }
+        #texto{
+            margin: auto;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Verifique se um número é primo</h1>
+    <div id="texto">
+        <p id="textPrimo">
+            Um número primo é um número natural maior que 1 que é divisível apenas por 1 e por ele mesmo.
+            Em outras palavras, um número primo não pode ser resultado da multiplicação de dois números inteiros menores que
+            ele.
+        </p>
+    </div>
+    <div id="conteudo">
+        <span id="text">Digite um número:</span> <br> <input type="number" id="num"> <br> <br>
+        <button type="button" onclick="calc()">Calcular</button> <br>
+    </div>
+    <div id="res"></div>
+
+    <script>
+        function isPrimo(n) {
+            if (n <= 1) {
+                return false;
+            }
+
+            if (n <= 3) {
+                return true;
+            }
+
+            if (n % 2 === 0 || n % 3 === 0) {
+                return false;
+            }
+
+            for (let i = 5; i * i <= n; i += 6) {
+                if (n % i === 0 || n % (i + 2) === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        function calc() {
+            var n = parseInt(document.getElementById("num").value);
+            var res = document.getElementById("res");
+            res.innerHTML = `${isPrimo(n)}`
+        }
+    </script>
+</body>
+
+</html>

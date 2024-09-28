@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior número</title>
+    <link rel="shortcut icon" href="midia/Aniket-Suvarna-Box-Logo-Bxl-javascript.48.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+        #container{
+            display: flex;    
+        }
+        #conteudo{
+            margin: auto;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 26px;
+            padding-right: 6px;
+            background-color: cyan;
+            color: black;
+            font-family: "Fredoka", sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+        input{
+            width: 80px;
+            margin-left: 10%;
+        }
+        button{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 18%;
+        }
+        #res{
+            width: 140px;
+            margin-left: -10%;
+        }
+        body{
+            background-color: aquamarine;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificar maior número</h1>
+    <div id="container">
+        <div id="conteudo">
+            <label for="n1">Digite um número:</label> <br>
+            <input type="number" id="n1"><br>
+            <label for="n2">Digite um número:</label>  <br>
+            <input type="number" id="n2"><br>
+            <label for="n1">Digite um número:</label> <br>
+            <input type="number" id="n3"> <br>
+            <button type="button" onclick="calc()">Verificar</button> <br>
+            <input type="text" id="res">
+        </div>
+    </div>
+
+    <script>
+        function calc(){
+            var res=document.getElementById("res");
+            var num1=parseInt(document.getElementById("n1").value);
+            var num2=parseInt(document.getElementById("n2").value);
+            var num3=parseInt(document.getElementById("n3").value);
+            if(isNaN(num1) || isNaN(num2) || isNaN(num3)){
+              res.value=`Digite os números`;
+            }else{
+                var nums=[num1,num2,num3];
+                var maior=Math.max(...nums);
+                res.value=`O maior número é ${maior}`;
+            }
+        }
+    </script>
+</body>
+</html>
