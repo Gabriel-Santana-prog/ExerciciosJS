@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertendo strings</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: magenta;
+        }
+        #container{
+            display: flex;
+        }
+        #conteudo{
+            margin: auto;
+            border: 2px solid black;
+            padding: 15px;
+            background-color: white;
+        }
+        p{
+            text-align: left;
+        }
+        label,input{
+            margin-left: 30%;
+        }
+        input{
+            width: 124px;
+        }
+        button{
+            margin-top: 5px;
+            margin-left: 40%;
+        }
+        #res{
+            font-style:italic ;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="conteudo">
+            <h1>Palavra invertida e palíndromo</h1>
+            <p>Palíndromos são palavras ou frases que podem ser lidas da esquerda <br> para a direita ou de trás para a frente e que permanecem iguais.
+            </p>
+            <label for="istring">Digite uma palavra:</label> <br>
+            <input type="text" id="istring"> <br>
+            <button type="button" onclick="inverso()">Ver</button>
+            <div id="res"></div>
+        </div>
+    </div>
+
+   <script>
+       function inverso(){ 
+        var palavra=document.getElementById("istring").value;
+        var palavraInvertida="";
+        var res=document.getElementById("res");
+        if (palavra==""){
+            res.innerHTML="Digite uma palavra !"
+        }else{
+        for(let i=palavra.length-1;i>=0;i--){
+            palavraInvertida+=palavra[i];
+        }
+        res.innerHTML=`${palavraInvertida} <br>`;
+        
+        
+        if(palavraInvertida==palavra){
+            res.innerHTML+=`A palavra "${palavra}" é um palíndromo`;
+        }else{
+            res.innerHTML+=`A palavra "${palavra}" não é um palíndromo`;
+        
+        }
+      }
+    }
+   </script>
+</body>
+</html>
