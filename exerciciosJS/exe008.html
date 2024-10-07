@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="midia/Aniket-Suvarna-Box-Logo-Bxl-javascript.48.png">
+    <title>Calculadora</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+        body{
+            background-color: cornflowerblue;
+            font-family: "Arimo", sans-serif;
+        }
+        #container{
+            display: flex;
+        }
+        #conteudo{
+            margin: auto;
+            border: 2px solid black;
+            padding: 10px;
+            background-color: chartreuse;
+            
+        }
+        input{
+            width: 115px;
+            height: 15px;
+            margin-top: 4px;
+        }
+        button{
+            margin-top: 6px;
+        }
+        #forms{
+            margin-left:13%;
+        }
+        #buttons{
+            margin-left: 16%;
+        }
+        #res{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="conteudo">
+            <h1>Calculadora</h1>
+            <div id="forms">
+                <label for="inum">Digite um número</label> <br>
+                <input type="number" id="inum"> <br>
+                <label for="inum2">Digite um número</label> <br>
+                <input type="number" id="inum2"> <br>
+            </div>
+                <div id="buttons">
+                    <button type="button" onclick="adicao()">+</button>
+                    <button type="button" onclick="subtracao()">-</button>
+                    <button type="button" onclick="multiplicacao()">x</button>
+                    <button type="button" onclick="divisao()" >/</button>
+                </div>
+            
+            <div id="res"></div>
+        </div>
+    </div>
+    <script>
+        var n1=document.getElementById("inum");
+        var n2=document.getElementById("inum2");
+        var res=document.getElementById("res");
+        
+        function adicao(){
+            var valor1=parseInt(n1.value);
+            var valor2=parseInt(n2.value);
+            if(isNaN(valor1) || isNaN(valor2)){
+            res.innerHTML=`Digite dois números!`;
+            }else{
+                var soma=valor1+valor2;
+                res.innerHTML=`${soma}`;
+            }
+        }
+        function subtracao(){
+            var valor1=parseInt(n1.value);
+            var valor2=parseInt(n2.value);
+            if(isNaN(valor1) || isNaN(valor2)){
+            res.innerHTML=`Digite dois números!`;
+            }else{
+                var subtracao=valor1-valor2;
+                res.innerHTML=`${subtracao}`
+            }
+        }
+        function multiplicacao(){
+            var valor1=parseInt(n1.value);
+            var valor2=parseInt(n2.value);
+            if(isNaN(valor1) || isNaN(valor2)){
+            res.innerHTML=`Digite dois números!`;
+            }else{
+            var multiplicacao=valor1*valor2;
+            res.innerHTML=`${multiplicacao}`
+          }
+        }
+        function divisao(){
+            var valor1=parseInt(n1.value);
+            var valor2=parseInt(n2.value);
+            if(isNaN(valor1) || isNaN(valor2)){
+            res.innerHTML=`Digite dois números!`;
+            }else{
+                if (valor2==0){
+                    res.innerHTML=0;
+                }else{
+                    var divisao=valor1/valor2;
+                    res.innerHTML=`${divisao}`
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
