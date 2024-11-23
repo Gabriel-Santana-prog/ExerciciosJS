@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP - Agendamento</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Agendamento de Consultas</h1>
+    </header>
+    <nav class="container">
+        <ul>
+            <li><a href="index.html">Cadastro de Equipes</a></li>
+    </nav>
+    <div class="container">
+        <form id="form-agendamento">
+            <label for="paciente">Paciente</label>
+            <input type="text" name="paciente" id="paciente" placeholder="Nome do paciente" required>
+            
+            <label for="medico">Médico</label>
+            <select name="medico" id="medico" required>
+                <option value="">Selecione um médico</option>
+            </select>
+            
+            <label for="data">Data</label>
+            <input type="date" name="data" id="data" required>
+            
+            <button type="submit">Agendar</button>
+        </form>
+    </div>
+    <footer>
+        <p>© 2024 Hospital São Lucas e Mendel</p>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/validations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

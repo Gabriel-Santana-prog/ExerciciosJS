@@ -1,0 +1,17 @@
+const medicos = [
+    { id: 1, nome: "Dr. João Silva", especialidade: "Cardiologia" },
+    { id: 2, nome: "Dra. Ana Costa", especialidade: "Pediatria" },
+    { id: 3, nome: "Enf. Paula Santana", especialidade: "Enfermeira" },
+    { id: 4, nome: "Dr. Marcos Lima", especialidade: "Dermatologia" },
+    { id: 5, nome: "Dr. Pedro Carvalho", especialidade: "Ortopedista" },
+    { id: 6, nome: "Dra. Mariana Santos ", especialidade: "Angiologia" },
+    { id: 7, nome: "Dra. Renata Rocha ", especialidade: "Anestesiologia" },
+    { id: 8, nome: "Dr. Gustavo Lima ", especialidade: "Acunputura" },
+    { id: 9, nome: "Dr. Bruno Mendes ", especialidade: "Endoscopia" },
+    { id: 10, nome: "Dr. Eduardo Nascimento ", especialidade: "Geriatria" },
+    { id: 11, nome: "Dra. Tatiane Souza ", especialidade: "obstrícia" },
+    { id: 12, nome: "Dr. Felipe Almeida", especialidade: "ginecologia" },
+    { id: 13, nome: "Dra. Camila Ferreira ", especialidade: "infectologia" },
+    { id: 14, nome: "Dr. Lucas Martins ", especialidade: "Psiquiatria" },
+    { id: 15, nome: "Dr. Rafael Oliveira ", especialidade: "Urologia" },
+];

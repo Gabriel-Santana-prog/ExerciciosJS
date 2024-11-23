@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Equipes</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Equipes</h1>
+    </header>
+    <nav class="container">
+        <ul>
+            <li><a href="index.html">Cadastro de Equipes</a></li>
+    </nav>
+    <div class="container">
+        <form id="form-cadastro">
+            <label for="nome">Nome da Equipe</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome da equipe" required>
+
+            <label for="especialidade">Especialidade</label>
+            <input type="text" name="especialidade" id="especialidade" placeholder="Especialidade médica" required>
+
+            <label for="membros">Número de Membros</label>
+            <input type="number" name="membros" id="membros" placeholder="Número de membros" required min="1">
+
+            <!-- Div para os campos dos médicos -->
+            <div id="membros-lista"></div>
+
+            <label for="lider">Líder da Equipe</label>
+            <input type="text" name="lider" id="lider" placeholder="Nome do líder" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+    <footer>
+        <p>© 2024 Hospital São Lucas e Mendel</p>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/validations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

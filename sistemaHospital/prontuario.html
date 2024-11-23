@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prontuário Médico</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+    <header>
+        <h1>Prontuário Médico</h1>
+    </header>
+    <nav class="container">
+        <ul>
+            <li><a href="index.html">Cadastro de Equipes</a></li>
+    </nav>
+    <div class="container">
+        <h2>Prontuários</h2>
+        <label for="filtro-paciente" class="filtro-label">Filtrar por Nome do Paciente:</label>
+        <input type="text" id="filtro-paciente" class="filtro-input" placeholder="Digite o nome do paciente">
+        <div class="table-wrapper">
+            <table id="tabela-prontuarios">
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Médico</th>
+                        <th>Data</th>
+                        <th>Problema</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- As linhas serão preenchidas dinamicamente pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 Hospital São Lucas e Mendel</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
